@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamHub | Визитка стримера</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение иконок FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Профиль -->
+        <header class="profile">
+            <div class="avatar-placeholder">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <h1 class="nickname">@Placeholder_Name</h1>
+            <p class="bio">Контент-мейкер • Стример • Геймер<br>Создаю уютные трансляции и обучающие ролики</p>
+            
+            <!-- Индикатор статуса стрима -->
+            <div class="status-badge live">
+                <span class="pulse"></span> LIVE NOW
+            </div>
+        </header>
+
+        <!-- Виджет трансляции -->
+        <section class="stream-widget">
+            <div class="stream-header">
+                <h2><i class="fab fa-twitch"></i> Прямая трансляция</h2>
+            </div>
+            <div class="stream-container">
+                <!-- Twitch Embed Placeholder -->
+                <!-- В реальном проекте заменить data-channel на название канала -->
+                <iframe 
+                    src="https://player.twitch.tv/?channel=placeholder_channel&parent=localhost&muted=true"
+                    height="100%" 
+                    width="100%" 
+                    title="Twitch Stream" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    scrolling="no" 
+                    allow="autoplay; encrypted-media">
+                </iframe>
+            </div>
+            <div class="stream-info">
+                <span class="viewers"><i class="fas fa-eye"></i> 1.2K зрителей</span>
+                <span class="game"><i class="fas fa-gamepad"></i> Just Chatting</span>
+            </div>
+        </section>
+
+        <!-- Социальные сети -->
+        <section class="social-links">
+            <a href="#" class="social-btn telegram">
+                <i class="fab fa-telegram-plane"></i>
+                <span>Telegram канал</span>
+            </a>
+            <a href="#" class="social-btn youtube">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube видео</span>
+            </a>
+            <a href="#" class="social-btn vk">
+                <i class="fab fa-vk"></i>
+                <span>Группа ВКонтакте</span>
+            </a>
+            <a href="#" class="social-btn discord">
+                <i class="fab fa-discord"></i>
+                <span>Discord сервер</span>
+            </a>
+        </section>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <p>&copy; 2024 Placeholder Name. Все права защищены.</p>
+            <p class="design-note">Дизайн макета для демонстрации</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+/* Основные переменные и сброс */
+:root {
+    --bg-color: #0f0f13;
+    --card-bg: #1a1a24;
+    --accent: #9147ff; /* Twitch Purple */
+    --accent-glow: rgba(145, 71, 255, 0.4);
+    --text-main: #ffffff;
+    --text-secondary: #a0a0b0;
+    
+    /* Цвета соцсетей */
+    --tg-color: #229ED9;
+    --yt-color: #FF0000;
+    --vk-color: #0077FF;
+    --ds-color: #5865F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-image: radial-gradient(circle at 50% 0%, #2d1b4e 0%, var(--bg-color) 60%);
+}
+
+.container {
+    width: 100%;
+    max-width: 480px; /* Мобильный формат */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Профиль */
+.profile {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--accent), #6441a5);
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 0 20px var(--accent-glow);
+    border: 3px solid var(--card-bg);
+}
+
+.nickname {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.bio {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 4px 12px;
+    background: rgba(255, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff4444;
+    text-transform: uppercase;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #ff4444;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(255, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0); }
+}
+
+/* Виджет стрима */
+.stream-widget {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.stream-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stream-header h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.stream-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    background: #000;
+}
+
+.stream-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stream-info {
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.stream-info i {
+    margin-right: 4px;
+}
+
+/* Социальные сети */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.1);
+}
+
+.social-btn i {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.social-btn span {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* Цвета кнопок при ховере */
+.social-btn.telegram:hover { background: rgba(34, 158, 217, 0.1); color: var(--tg-color); }
+.social-btn.youtube:hover { background: rgba(255, 0, 0, 0.1); color: var(--yt-color); }
+.social-btn.vk:hover { background: rgba(0, 119, 255, 0.1); color: var(--vk-color); }
+.social-btn.discord:hover { background: rgba(88, 101, 242, 0.1); color: var(--ds-color); }
+
+/* Футер */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.design-note {
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* Адаптив */
+@media (max-width: 400px) {
+    .nickname { font-size: 20px; }
+    .social-btn { padding: 14px 16px; }
+}
